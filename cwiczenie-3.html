@@ -6,23 +6,47 @@
 	<meta charset="utf-8">
 	<title>3 - Instrukcja warunkowa w JavaScript</title>
 	<link href="arkusz-cwiczenia.css" rel="stylesheet">
-	
 </head>
 
 <body>
-
+	<label>Igor Muca 4A</label><br>
 	P = ( <input type="number" id="x"> , <input type="number" id="y"> )
 
 	<input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
 
-	<div id="wynik"></div>
+	<div id="czywyszlo"></div>
 	
 	<script>
 	
 		function ktora_cwiartka()
 		{
-			
-			
+			var x=document.getElementById("x").value;
+			var y=document.getElementById("y").value;
+			x=parseInt(x);
+			y=parseInt(y);
+			var odpowiedz = "";
+			if (x==15 && y ==96){
+				odpowiedz="Rene Descartes urodził się w 1596 roku w Turenii na terenie Francji.<br> Pochodził z rodziny szlacheckiej. Początkowo pobierał nauki u Jezuitów, potem zaś przez krótki czas uczył się w Paryżu, a następnie studiował prawo na Uniwersytecie w Poitiers.<br> Kontynuował naukę w Bredzie, gdzie uzyskał stopień z inżynierii wojskowej.";
+			}
+			else if (x==0 && y==0){
+				odpowiedz="Punkt P=(0,0) jest początkiem układu współrzędnych"
+			}
+			else if (x==0 || y==0){
+				odpowiedz="Punkt leży na jednej z osi układu"
+			}
+			else if (x>0 && y>0){
+				odpowiedz="punkt leży na 1 ćwiartce"
+			}
+			else if (x<0 && y>0){
+				odpowiedz="punkt leży na 2 ćwiartce"
+			}
+			else if (x<0 && y<0){
+				odpowiedz="punkt leży na 3 ćwiartce"
+			}
+			else if (x>0 && y<0){
+				odpowiedz="punkt leży na 4 ćwiartce"
+			}
+			document.getElementById("czywyszlo").innerHTML = odpowiedz;
 		}
 
 	</script>
