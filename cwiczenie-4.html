@@ -10,24 +10,46 @@
 </head>
 
 <body>
-
+	<label>Igor Muca 4A<br></label>
 	<label> a = <input type="number" id="a"> </label>
 	<label> b = <input type="number" id="b"> </label>
 	<label> c = <input type="number" id="c"> </label>
 
 	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
 
-	<div id="wynik"></div>
+	<div id="wykonanie"></div>
 	
 	<script>
 	
 		function matematyka()
 		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
-			
-			
+			var a = document.getElementById("a").value;
+			a = parseInt(a);
+			var b = document.getElementById("b").value;
+			b = parseInt(b);
+			var c = document.getElementById("c").value;
+			c = parseInt(c);
+			var wynik = "";
+			var najmniejsza=Math.min(a,b,c);
+			var najwieksza=Math.max(a,b,c);
+			var bezwzgledna=Math.abs(a) && Math.abs(b) && Math.abs(c);
+			wynik+= "najmniejsza liczba to: "+najmniejsza+"<br>";
+			wynik+= "największa liczba to: "+najwieksza+"<br>";
+			wynik+= "liczby bezwzględne to: <br>" +Math.abs(a) +"<br>"+ Math.abs(b)+"<br>"+ Math.abs(c)+ "<br>";
+			if(a%2==0){
+				wynik+= "liczba a jest parzysta <br>";
+			}
+			else{wynik+="liczba a jest nie parzysta <br>";}
+			if(b%2==0){
+				wynik+= "liczba b jest parzysta <br>";
+			}
+			else{ wynik+="liczba b jest nie parzysta <br>";}
+			if(c%2==0){
+				wynik+= "liczba c jest parzysta <br>";
+			}
+			else {wynik+="liczba c jest nie parzysta <br>";}
+
+			document.getElementById("wykonanie").innerHTML=wynik;
 		}
 
 	</script>
