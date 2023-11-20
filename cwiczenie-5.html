@@ -10,19 +10,24 @@
 </head>
 
 <body>
-
+	<label>Igor Muca 4A <br></label>
 	<label> Którą bramkę wybierasz: <input type="number" id="bramka"> </label>
 
 	<input type="submit" value="Wybieram bramkę" onclick="teleturniej()">
 
-	<div id="wynik"></div>
+	<div id="wygrana"></div>
 	
 	<script>
 	
 		function teleturniej()
 		{
 			var lucky = Math.floor(Math.random() * 3) + 1;
-			
+			var strzal="";
+			var czywygralem="";
+			strzal=parseInt(strzal);
+			strzal=document.getElementById("bramka").value;
+			(strzal == lucky) ? (czywygralem+="wygrales samochod z bramki: "+lucky) : (czywygralem+="przykro nam ale nie trafiles. Nagroda byla w bramce: "+lucky);
+			document.getElementById("wygrana").innerHTML=czywygralem;
 		}
 
 	</script>
