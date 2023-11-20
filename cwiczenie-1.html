@@ -12,19 +12,45 @@
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Igor Muca 4A<br>
+		Podaj numer dnia tygodnia: <input type="number" id="s">
 	</label>
 	
 	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
 
-	<div id="wynik"></div>
+	<div id="dzien"></div>
 	
 	<script>
 	
 		function getDayName()
 		{
-					
-			
+			var s=document.getElementById("s").value;
+			s=parseInt(s);
+			var dzientygodnia = "";
+			if (s==1){
+				dzientygodnia="Poniedziałek - Monday";
+			}
+			else if (s==2){
+				dzientygodnia="Wtorek - Tuesday";
+			}
+			else if (s==3){
+				dzientygodnia="Środa - Wednesday";
+			}
+			else if (s==4){
+				dzientygodnia="Czwartek - Thursday";
+			}
+			else if (s==5){
+				dzientygodnia="<span style='color:yellow'>Piątek - Friday</span>";
+			}
+			else if (s==6){
+				dzientygodnia="<span style='color:green'>Sobota - Saturday</span>";
+			}
+			else if (s==7){
+				dzientygodnia="<span style='color:green'>Niedziela - Sunday</span>";
+			}
+			else 
+				dzientygodnia="<span style='color:red'>Nie ma takiego dnia</span>";
+			document.getElementById("dzien").innerHTML=dzientygodnia;
 		}
 
 	</script>
